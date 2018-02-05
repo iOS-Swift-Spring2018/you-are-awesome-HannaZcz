@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +13,9 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="MarkerFeltThin.ttf">
+            <string>MarkerFelt-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -25,48 +27,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Y-51-L3X">
-                                <rect key="frame" x="27" y="20" width="320" height="94"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="iGb-vQ-vPX"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Y-51-L3X">
+                                <rect key="frame" x="27" y="20" width="0.0" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hp-M6-qdD">
-                                <rect key="frame" x="112" y="122" width="150" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="00O-8i-tiE"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hp-M6-qdD">
+                                <rect key="frame" x="218" y="133" width="141" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fQB-E6-3JQ"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RJR-lu-8cI">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJR-lu-8cI">
                                 <rect key="frame" x="16" y="178" width="343" height="469"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Neq-2e-51G">
+                                <rect key="frame" x="113" y="136" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="soundSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="K9i-Ee-dTN"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play Sound:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sa-ej-eRA">
+                                <rect key="frame" x="16" y="138" width="99" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K91-ji-HgR">
+                                <rect key="frame" x="16" y="39" width="343" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" red="0.54225677250000004" green="0.14468467239999999" blue="0.09080905467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="89Y-51-L3X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="AAH-oJ-9rd"/>
-                            <constraint firstItem="RJR-lu-8cI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AOx-rM-wvb"/>
-                            <constraint firstItem="89Y-51-L3X" firstAttribute="centerX" secondItem="6hp-M6-qdD" secondAttribute="centerX" id="QCa-Ll-vvv"/>
-                            <constraint firstItem="RJR-lu-8cI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WuA-oj-SEd"/>
-                            <constraint firstItem="89Y-51-L3X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XzH-SF-Vl2"/>
-                            <constraint firstItem="RJR-lu-8cI" firstAttribute="top" secondItem="6hp-M6-qdD" secondAttribute="bottom" id="dXl-c8-bZe"/>
-                            <constraint firstItem="6hp-M6-qdD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="kO7-Tg-N2G"/>
-                            <constraint firstItem="6hp-M6-qdD" firstAttribute="centerX" secondItem="RJR-lu-8cI" secondAttribute="centerX" id="rqr-4E-r7G"/>
-                            <constraint firstItem="6hp-M6-qdD" firstAttribute="top" secondItem="89Y-51-L3X" secondAttribute="bottom" constant="8" symbolic="YES" id="uyX-PO-xWP"/>
-                            <constraint firstAttribute="bottom" secondItem="RJR-lu-8cI" secondAttribute="bottom" constant="20" symbolic="YES" id="yid-Wj-Qr2"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="awesomeImage" destination="RJR-lu-8cI" id="owM-gQ-Cdn"/>
-                        <outlet property="messageLabel" destination="89Y-51-L3X" id="N90-Tc-bQC"/>
+                        <outlet property="messageLabel" destination="K91-ji-HgR" id="Rim-Bb-Voa"/>
+                        <outlet property="soundSwitch" destination="Neq-2e-51G" id="udE-j3-HYb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
